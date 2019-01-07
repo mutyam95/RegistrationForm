@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>
+APPLICATION FORM
+</title>
+<head>
+<style>
+.loginForm{
+margin:0px auto;
+text-align:center;
+margin:200px 120px;
+
+}
+input[type=text] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+input[type=button] {
+  width:8%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #45a049;
+}
+</style>
+<script>
+function validate()
+{
+var valid=document.getElementById("uid").value;
+  var pwd=document.getElementById("psd").value;
+  if(valid&&pwd!="")
+  {
+  if(valid=="user@gmail.com"&&pwd=="123456")
+    {
+       window.location.href="original.html";
+	   return true;
+    }
+  else
+    {
+      alert("Please Enter Correct Details");
+	  document.getElementById("uid").value="";
+	  document.getElementById("psd").value="";
+	  return false;
+    }
+  }
+  else{
+  alert("EmailID or Password could not be Empty");
+  return false;
+  }
+}
+</script>
+
+</head>
+
+<body>
+<div class="loginForm">
+<form>
+Emailid:<input type="text" id="uid"><br><br>
+Password:<input type="text" id="psd"><br><br>
+<input type="button" value="Login" id="login" onclick="validate()" >
+<input type="button" value="Register" id="signup" onclick="window.location.href='form1.html'">
+</form>
+</div>
+</body>
+</html>
